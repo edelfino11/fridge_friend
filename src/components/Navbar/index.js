@@ -1,10 +1,10 @@
 import React from 'react';
 import {
   Nav,
-  
   NavLink,
   NavMenu,
 } from './NavbarElements';
+import './navbar.css';
   
 const Navbar = () => {
   return (
@@ -12,16 +12,19 @@ const Navbar = () => {
       <Nav>
      
         <NavMenu>
-          <NavLink to='/profile' activeStyle>
+          <NavLink to={"/"} activestyle="true">
+            Fridge Friend
+          </NavLink>
+          <NavLink to='/profile' activestyle="true">
             Your Profile
           </NavLink>
-          <NavLink to='/fridge' activeStyle>
+          <NavLink to='/fridge' activestyle="true">
             Your Fridge
           </NavLink>
-          <NavLink to='/explore' activeStyle>
+          <NavLink to='/explore' activestyle="true">
             Explore Recipes
           </NavLink>
-          <NavLink to='/grocery' activeStyle>
+          <NavLink to='/grocery' activestyle="true">
             Your Grocery List
           </NavLink>
           {/* Second Nav */}
