@@ -1,25 +1,35 @@
-import React from 'react';
-import { MDBCard} from 'mdb-react-ui-kit';
-import Avatar from '@mui/material/Avatar';
-import { Typography, Stack } from '@mui/material';
-import BottomProfile from '../components/BottomProfile';
+import React from "react";
+import { IconButton, Avatar, Typography } from '@mui/material'
+import BottomProfile from "../components/BottomProfile";
+import { StyledEngineProvider } from "@mui/material/styles";
+import user from "../img/user.png";
 import "./profile.css"
-import { StyledEngineProvider } from '@mui/material/styles';
-import user from '../img/user.png'
 
-class Profile extends React.Component  {
-    
-  render () {
-    return <div>
-    <div className="profile">
-        <Avatar sx={{ width: 100, height: 100}} alt="" src={user} />
-        <Typography variant="h5" component="h2">Your Name</Typography>
-    </div>
+class Profile extends React.Component {
+
+  render() {
+    return (
+      <div>
+        <div className="profile">
+          <IconButton onClick={() => alert("Lol we need to make it so it opens files to change avatar")}>
+            <Avatar
+              sx={{ width: 100, height: 100 }}
+              alt=""
+              src={user}
+              onClick={this.fileHandler}
+            >
+            </Avatar>
+          </IconButton>
+          <Typography variant="h5" component="h2">
+            Your Name
+          </Typography>
+        </div>
         <StyledEngineProvider injectFirst>
-            <BottomProfile />
+          <BottomProfile />
         </StyledEngineProvider>
-  </div>
+      </div>
+    );
   }
-};
-  
+}
+
 export default Profile;
