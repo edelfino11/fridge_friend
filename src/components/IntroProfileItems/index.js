@@ -6,7 +6,6 @@ import blueIcon from "../../img/blue_icon_user.png";
 import refri from "../../img/refrigerator.png";
 import recipeBook from "../../img/book.png";
 import grocerylist from "../../img/grocery_list.png";
-import { NavLink as Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 
 const Pitem = () => {
