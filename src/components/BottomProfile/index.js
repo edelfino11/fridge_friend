@@ -118,7 +118,7 @@ export default function BottomProfile() {
       <Box sx={{ p: 10 }}>
         <TextField
           id="outlined-basic"
-          label="Outlined"
+          label="Allergens"
           variant="outlined"
           helperText="Please input specific allergens"
         />
