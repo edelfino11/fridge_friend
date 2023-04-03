@@ -4,12 +4,14 @@ import BottomProfile from "../components/BottomProfile";
 import { StyledEngineProvider } from "@mui/material/styles";
 import user from "../img/user.png";
 import "./profile.css"
+import Navbar from '../components/Navbar';
 
 class Profile extends React.Component {
 
   render() {
     return (
       <div>
+        <Navbar />
         <div className="profile">
           <IconButton onClick={() => alert("Lol we need to make it so it opens files to change avatar")}>
             <Avatar

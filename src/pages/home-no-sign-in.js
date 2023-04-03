@@ -2,6 +2,7 @@ import React from "react";
 
 import { Box, CardContent, Typography, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import Navbar from '../components/Navbar';
 
 
 const HomeNoSignIn = () => {
@@ -9,6 +10,7 @@ const HomeNoSignIn = () => {
 
     return (
       <div>
+        <Navbar />
         <Box sx={{ p: 10 }}>
           <React.Fragment>
             <CardContent sx={{ boxShadow: 10 }}>
@@ -29,7 +31,7 @@ const HomeNoSignIn = () => {
                 In order to use our app, please sign up below:{" "}
               </Typography>
               <Box textAlign="center">
-                <Button variant="contained" onClick={()=>navigate("/profile")}>
+                <Button variant="contained" onClick={()=>navigate("/signIn")}>
                   Please Sign In to Continue
                 </Button>
               </Box>
