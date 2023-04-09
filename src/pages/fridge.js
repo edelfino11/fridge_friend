@@ -14,8 +14,6 @@ import {
   Paper
 } from "@mui/material";
 import refrigerator from "../img/refrigerator.png";
-import FormControl from "@mui/material/FormControl";
-import FormLabel from "@mui/material/FormLabel";
 import Navbar from '../components/Navbar';
 import { useNavigate } from "react-router-dom";
 

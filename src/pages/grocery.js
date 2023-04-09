@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
-import { Grid, Box, CardContent, Typography, Button } from "@mui/material";
+import { Grid, Box, Typography} from "@mui/material";
 import SimpleTable from '../components/Table';
 import grocerylist from "../img/grocery_list.png";
 import { useNavigate } from "react-router-dom";
@@ -16,7 +16,6 @@ const Grocery = () => {
      <Grid
         container
         direction="row"
-        // justifyContent="center"
         alignItems="center"
         sx={{ pl: 5, pr: 5 }} 
       >
