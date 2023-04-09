@@ -40,11 +40,11 @@ const Fridge = () => {
     <div>
       <Navbar />
       <FlexContainer>
-      <Grid container justify = "center" alignItems="center" sx={{ p:4, width:'30%'}}>
-        <Typography variant="h5" sx={{ p:2, fontWeight: 'bold'}} >
+      <Grid container justify = "center" alignItems="center" sx={{ width:'30%'}}>
+      <Typography variant="h5" sx={{ p:5, fontWeight: 'bold'}} >
             Welcome to your fridge friend!
-            </Typography>
-        <Typography variant="body1" sx={{ pl: 2, pr:2}}>
+      </Typography>
+        <Typography variant="body1" sx={{ pl: 5, pr:2}}>
             Please input your grocery item's name to fill up your fridge friend.
             Be sure to input general grocery names.
             e.g. apples, flour, chicken, etc.

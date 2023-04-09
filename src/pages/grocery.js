@@ -3,26 +3,24 @@ import Navbar from '../components/Navbar';
 import { Grid, Box, Typography} from "@mui/material";
 import SimpleTable from '../components/Table';
 import grocerylist from "../img/grocery_list.png";
-import { useNavigate } from "react-router-dom";
 
 const Grocery = () => {
-  const navigate = useNavigate();
   return (
     <div>
      <Navbar />
-     <Typography variant="h4" sx={{ p: 5, fontWeight: 'bold'}} >
+     <Typography variant="h5" sx={{ pl:5, pt:5, fontWeight: 'bold'}} >
         Your Grocery List
      </Typography>
      <Grid
         container
         direction="row"
         alignItems="center"
-        sx={{ pl: 5, pr: 5 }} 
+        sx={{ pl: 4, pr: 4 }} 
       >
-        <Box sx={{ width: '30%' , p: 5 }}>
+        <Box sx={{ width: '30%', pl:1, pr:10 }}>
             <Typography variant="body1" display="block" >
                 Welcome to your grocery list, based off your fridge
-                or ingridients used by our recommended recipes. 
+                or used as ingridients by one of our recommended recipes. 
             </Typography>
             <Typography  sx={{ fontWeight: 'bold', pt:5}} >
                 Happy shopping!
