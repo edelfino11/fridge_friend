@@ -1,0 +1,9 @@
+.photo {
+    height: 80px;
+    width: 80px; 
+}
+.smallbody {
+    width: 300px; 
+    padding-right: 50px;
+    padding-left: 50px;
+}
