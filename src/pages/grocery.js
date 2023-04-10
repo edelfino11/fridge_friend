@@ -1,72 +1,39 @@
 import React from 'react';
-import {
-  flexbox,
-  FormHelperText,
-  FormControlLabel,
-  FormGroup,
-  Checkbox,
-  Grid,
-  TextField,
-  Button,
-  Card,
-  Box,
-  CardContent,
-  Typography,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Paper
-} from "@mui/material";
 
-
-// change here
-function createData(name, amount, unit, date) {
-  return { name, amount, unit, date };
-}
-
-
-const rows = [
-  createData('Apple', 20, 'N/A', '10 days'),
-];
-
+import Navbar from '../components/Navbar';
+import { Grid, Box, Typography} from "@mui/material";
+import SimpleTable from '../components/Table';
+import grocerylist from "../img/grocery_list.png";
 
 const Grocery = () => {
   return (
     <div>
-      <Box sx={{ p:4, justifyContent: 'space-between', alignContent: 'space-evenly', width:'80%', order: 1 }}>
-        <h2>Your Grocery List</h2>
-        <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Food Name</TableCell>
-            <TableCell align="right">Amount</TableCell>
-            <TableCell align="right">Unit</TableCell>
-            <TableCell align="right">When to Buy</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow
-              key={row.name}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            >
-              <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell>
-              <TableCell align="right">{row.amount}</TableCell>
-              <TableCell align="right">{row.unit}</TableCell>
-              <TableCell align="right">{row.date}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
-      </Box>
-      
+     <Navbar />
+     <Typography variant="h5" sx={{ pl:5, pt:5, fontWeight: 'bold'}} >
+        Your Grocery List
+     </Typography>
+     <Grid
+        container
+        direction="row"
+        alignItems="center"
+        sx={{ pl: 4, pr: 4 }} 
+      >
+        <Box sx={{ width: '30%', pl:1, pr:10 }}>
+            <Typography variant="body1" display="block" >
+                Welcome to your grocery list, based off your fridge
+                or used as ingridients by one of our recommended recipes. 
+            </Typography>
+            <Typography  sx={{ fontWeight: 'bold', pt:5}} >
+                Happy shopping!
+            </Typography>
+        </Box>
+        <Box>
+            <SimpleTable />
+        </Box>
+        <Box sx={{ pl: 10 }}>
+            <img src={grocerylist} alt="blue icon" width="40%"/>
+        </Box>
+      </Grid>
     </div>
   );
 };

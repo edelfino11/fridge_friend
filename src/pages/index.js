@@ -14,6 +14,7 @@ import {
   Typography,
 } from "@mui/material";
 import Pitem from "../components/IntroProfileItems/";
+import Navbar from '../components/Navbar';
 
 const card = (
   <React.Fragment>
@@ -36,6 +37,7 @@ const card = (
 const Home = () => {
   return (
     <div>
+      <Navbar />
       <Grid
         container
         direction="row"

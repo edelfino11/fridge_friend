@@ -1,16 +1,10 @@
 import React from 'react';
+
 import {
-  flexbox,
-  FormHelperText,
-  FormControlLabel,
-  FormGroup,
-  Checkbox,
   Grid,
   TextField,
   Button,
-  Card,
   Box,
-  CardContent,
   Typography,
   Table,
   TableBody,
@@ -21,8 +15,8 @@ import {
   Paper
 } from "@mui/material";
 import refrigerator from "../img/refrigerator.png";
-import FormControl from "@mui/material/FormControl";
-import FormLabel from "@mui/material/FormLabel";
+import Navbar from '../components/Navbar';
+import { useNavigate } from "react-router-dom";
 
 const FlexContainer = ({ children }) => (
   <Box sx={{ display: 'flex' }}>
@@ -42,88 +36,78 @@ const rows = [
 ];
 
 const Fridge = () => {
+    const navigate = useNavigate();
   return (
     <div>
+      <Navbar />
       <FlexContainer>
-      <Box sx={{ p:4, justifyContent: 'space-between', alignContent: 'space-evenly', width:'40%', order: 1 }}>
-      <p>Welcome to your fridge friend!</p>
-      <br>
-      </br>
-      <p>
-        Please input your grocery item's name to fill up your fridge friend.
-        Be sure to input general grocery names.
-        e.g. apples, flour, chicken, etc.
-      </p>
-      <img src={refrigerator} alt="refrigerator" width='250' height='250'/>
-      </Box>
+      <Grid container justify = "center" alignItems="center" sx={{ width:'30%'}}>
+      <Typography variant="h5" sx={{ p:5, fontWeight: 'bold'}} >
+            Welcome to your fridge friend!
+      </Typography>
+        <Typography variant="body1" sx={{ pl: 5, pr:2}}>
+            Please input your grocery item's name to fill up your fridge friend.
+            Be sure to input general grocery names.
+            e.g. apples, flour, chicken, etc.
+        </Typography>
+        <Grid item sx={{ p: 6 }}>
+            <img src={refrigerator} alt="refrigerator" width='250' height='250'/>
+        </Grid>
+      </Grid>
       {/* <input type="text" id="item" name="item"></input>
       <p>Please input your grocery item here!</p>
       <input type="text" id="amount" name="amount"></input>
       <p>Please input amount, N/A if not applicable</p>
       <input type="text" id="unit" name="unit"></input>
       <p>Please input Unit, N/A if not applicable</p> */}
-      <Box sx={{ p:4, justifyContent: 'space-between', alignContent: 'space-evenly', width:'40%', pr:2, order: 2 }}>
+      <Box sx={{ p:4, justifyContent: 'space-between', alignContent: 'space-evenly', pr:2, order: 2 }}>
       <Grid
-        container
         direction="row"
-        justifyContent="center"
+        spacing={0}
         alignItems="center"
+        justify="center"
         sx = {{pt:2, pb:2}}
       >
-      
-      {/* <Box justifyContent="center" alignItems="center"> */}
-        {/* <Box sx={{pr:2}}> */}
           <TextField
             id="item"
             label="Item"
             variant="outlined"
             helperText="Please input your grocery item here"
-
-            sx={{
-              width: 200
-            }}
-            InputProps={{ sx: { height: 40 } }}
-            placeholder="SX + InputProps"
-          />
-        {/* </Box>
-        <Box sx={{pr:2}}> */}
+            sx={{ width: 150, m:2}}
+            placeholder="item"/>
           <TextField
           id="amount"
           label="Amount"
           variant="outlined"
           helperText="Please input amount, N/A if not applicable"
           sx={{
-            width: 200
+            width: 150, m:2
           }}
-          InputProps={{ sx: { height: 40 } }}
-          placeholder="SX + InputProps"
+          placeholder="amount"
         />
-      {/* </Box>  */}
       <TextField
         id="unit"
         label="Unit"
         variant="outlined"
         helperText="Please input Unit, N/A if not applicable"
         sx={{
-          width: 200
+          width: 150, m:2
         }}
-        InputProps={{ sx: { height: 40 } }}
-        placeholder="SX + InputProps"
+        placeholder="unit"
       />
-      {/* </Box> */}
+      <Button sx={{ m: 3 }} type="submit" variant="contained"onClick={() => { navigate("/home"); }}>
+        Submit Item
+      </Button>
       </Grid>
-      
-
-
 
       <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+      <Table aria-label="simple table">
         <TableHead>
           <TableRow>
             <TableCell>Food Name</TableCell>
-            <TableCell align="right">Amount</TableCell>
-            <TableCell align="right">Unit</TableCell>
-            <TableCell align="right">Expiration Date</TableCell>
+            <TableCell >Amount</TableCell>
+            <TableCell >Unit</TableCell>
+            <TableCell >Expiration Date</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -135,9 +119,9 @@ const Fridge = () => {
               <TableCell component="th" scope="row">
                 {row.name}
               </TableCell>
-              <TableCell align="right">{row.amount}</TableCell>
-              <TableCell align="right">{row.unit}</TableCell>
-              <TableCell align="right">{row.date}</TableCell>
+              <TableCell >{row.amount}</TableCell>
+              <TableCell >{row.unit}</TableCell>
+              <TableCell >{row.date}</TableCell>
             </TableRow>
           ))}
         </TableBody>

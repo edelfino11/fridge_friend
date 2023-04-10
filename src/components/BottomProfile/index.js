@@ -50,7 +50,7 @@ export default function BottomProfile() {
   return (
     <Grid container direction="row">
       <Box sx={{ minWidth: 275, p: 10 }}>
-        <Card variant="outlined" sx={{ maxWidth: 345 }}>
+        <Card sx={{ maxWidth: 345, boxShadow: 10 }}>
           {card}
         </Card>
       </Box>
